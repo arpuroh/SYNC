@@ -13,68 +13,90 @@
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            background-color: #F9F8F6;
+            color: #3D3D3D;
         }
-        .text-coral-500 { color: #EA596E; }
-        .bg-coral-500 { background-color: #EA596E; }
-        .border-coral-500 { border-color: #EA596E; }
-        .hover\:bg-coral-600:hover { background-color: #d44a5f; }
-        .bg-coral-50 { background-color: #fef6f7; }
+        .text-coral-600 { color: #D9536A; }
+        .bg-coral-600 { background-color: #D9536A; }
+        .border-coral-600 { border-color: #D9536A; }
+        .hover\:bg-coral-700:hover { background-color: #c24157; }
+        .bg-coral-50 { background-color: #FDF5F6; }
         .gradient-text {
-            background: linear-gradient(90deg, #EA596E, #d44a5f);
+            background: linear-gradient(90deg, #D9536A, #c24157);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero-bg {
-             background-color: #fef6f7;
-             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fce8eb' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        .tab-active {
+            border-color: #D9536A !important;
+            color: #D9536A !important;
+            font-weight: 600;
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-stone-50">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-stone-50/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-coral-500">Sync</a>
+            <a href="#" class="text-3xl font-bold text-coral-600">Sync</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#problem" class="text-gray-600 hover:text-coral-500 transition-colors">The Problem</a>
-                <a href="#solution" class="text-gray-600 hover:text-coral-500 transition-colors">Our Solution</a>
-                <a href="#phases" class="text-gray-600 hover:text-coral-500 transition-colors">The Science</a>
+                <a href="#solution" class="text-gray-600 hover:text-coral-600 transition-colors">How It Works</a>
+                <a href="#phases" class="text-gray-600 hover:text-coral-600 transition-colors">The Science</a>
+                <a href="#purchase" class="text-gray-600 hover:text-coral-600 transition-colors">Shop</a>
             </div>
-            <a href="#purchase" class="hidden md:inline-block bg-coral-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-coral-600 transition-all duration-300 transform hover:scale-105">Shop Now</a>
+            <a href="#purchase" class="hidden md:inline-block bg-coral-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-coral-700 transition-all duration-300 transform hover:scale-105">Get Started</a>
             <button id="mobile-menu-button" class="md:hidden">
                 <i data-lucide="menu" class="text-gray-700"></i>
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#problem" class="block py-2 text-gray-600 hover:text-coral-500">The Problem</a>
-            <a href="#solution" class="block py-2 text-gray-600 hover:text-coral-500">Our Solution</a>
-            <a href="#phases" class="block py-2 text-gray-600 hover:text-coral-500">The Science</a>
-            <a href="#purchase" class="block mt-4 bg-coral-500 text-white text-center font-semibold px-6 py-2 rounded-full hover:bg-coral-600 transition-colors">Shop Now</a>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-stone-50">
+            <a href="#solution" class="block py-2 text-gray-600 hover:text-coral-600">How It Works</a>
+            <a href="#phases" class="block py-2 text-gray-600 hover:text-coral-600">The Science</a>
+            <a href="#purchase" class="block py-2 text-gray-600 hover:text-coral-600">Shop</a>
+            <a href="#purchase" class="block mt-4 bg-coral-600 text-white text-center font-semibold px-6 py-2 rounded-full hover:bg-coral-700 transition-colors">Get Started</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-bg">
-            <div class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+        <section class="bg-coral-50">
+            <div class="container mx-auto px-6 pt-16 pb-20 md:py-32 flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Nutrition in <span class="gradient-text">Sync</span> with your Cycle.</h1>
-                    <p class="mt-4 text-lg text-gray-600 max-w-lg mx-auto md:mx-0">Our mission is to improve women's health by providing a dietary supplement that syncs with each phase of the menstrual cycle, minimizing symptoms and maximizing well-being.</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">The new standard for cycle wellness.</h1>
+                    <p class="mt-4 text-lg text-gray-600 max-w-lg mx-auto md:mx-0">Doctor-formulated nutrition that syncs with your unique hormonal rhythm. Feel your best, all month long.</p>
                     <div class="mt-8">
-                        <a href="#solution" class="bg-coral-500 text-white font-semibold px-8 py-3 rounded-full hover:bg-coral-600 transition-all duration-300 transform hover:scale-105 inline-block">Learn More</a>
+                        <a href="#purchase" class="bg-coral-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-coral-700 transition-all duration-300 transform hover:scale-105 inline-block">Find Your Flow</a>
                     </div>
                 </div>
-                <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-                    <img src="https://placehold.co/500x500/EA596E/FFFFFF?text=Sync" alt="Sync Product" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md">
+                <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center items-center">
+                    <div class="w-80 h-80 md:w-96 md:h-96 bg-coral-600 rounded-full shadow-2xl flex items-center justify-center">
+                        <span class="text-white text-7xl font-bold tracking-wider">Sync</span>
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Sync? (Trust) Section -->
+        <section id="trust" class="py-16 bg-stone-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <i data-lucide="stethoscope" class="h-10 w-10 text-coral-600"></i>
+                        <p class="mt-2 font-semibold">Doctor Formulated</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-lucide="flask-conical" class="h-10 w-10 text-coral-600"></i>
+                        <p class="mt-2 font-semibold">Clinically-Backed Ingredients</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-lucide="shield-check" class="h-10 w-10 text-coral-600"></i>
+                        <p class="mt-2 font-semibold">Third-Party Tested</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-lucide="leaf" class="h-10 w-10 text-coral-600"></i>
+                        <p class="mt-2 font-semibold">Clean, Bioavailable</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -82,18 +104,10 @@
         <!-- The Problem Section -->
         <section id="problem" class="py-20">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">The Monthly Struggle is Real.</h2>
-                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Fatigue, bloating, cramps, and mood swings... Sound familiar? Your body's nutritional needs change throughout your cycle, but finding one solution that adapts is nearly impossible.</p>
-                <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 max-w-5xl mx-auto">
-                    <div class="flex flex-col items-center"><div class="bg-coral-50 rounded-full p-4"><i data-lucide="battery-low" class="h-8 w-8 text-coral-500"></i></div><p class="mt-2 font-semibold">Fatigue</p></div>
-                    <div class="flex flex-col items-center"><div class="bg-coral-50 rounded-full p-4"><i data-lucide="wind" class="h-8 w-8 text-coral-500"></i></div><p class="mt-2 font-semibold">Bloating</p></div>
-                    <div class="flex flex-col items-center"><div class="bg-coral-50 rounded-full p-4"><i data-lucide="heart-pulse" class="h-8 w-8 text-coral-500"></i></div><p class="mt-2 font-semibold">Cramps</p></div>
-                    <div class="flex flex-col items-center"><div class="bg-coral-50 rounded-full p-4"><i data-lucide="cloud-moon" class="h-8 w-8 text-coral-500"></i></div><p class="mt-2 font-semibold">Mood Swings</p></div>
-                    <div class="flex flex-col items-center"><div class="bg-coral-50 rounded-full p-4"><i data-lucide="shield-alert" class="h-8 w-8 text-coral-500"></i></div><p class="mt-2 font-semibold">Tenderness</p></div>
-                    <div class="flex flex-col items-center"><div class="bg-coral-50 rounded-full p-4"><i data-lucide="dot" class="h-8 w-8 text-coral-500"></i></div><p class="mt-2 font-semibold">Acne</p></div>
-                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Your cycle is more than just your period.</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Hormonal shifts affect your mood, energy, and comfort all month long. Supporting your body through each phase shouldn't be complicated.</p>
                  <div class="mt-16 flex justify-center">
-                    <img src="https://placehold.co/800x400/fef6f7/EA596E?text=Feel+your+best,+all+month+long." alt="Woman feeling comfortable and happy" class="rounded-lg shadow-lg w-full max-w-4xl">
+                    <img src="https://placehold.co/1000x400/FDF5F6/D9536A?text=Four+Phases.+One+Solution." alt="Woman feeling comfortable and happy" class="rounded-lg shadow-lg w-full max-w-5xl">
                 </div>
             </div>
         </section>
@@ -102,36 +116,36 @@
         <section id="solution" class="bg-coral-50 py-20">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x600/FFFFFF/EA596E?text=One+Box,+Four+Formulas" alt="Sync one box system" class="rounded-lg shadow-xl">
+                    <img src="https://placehold.co/600x600/FFFFFF/D9536A?text=One+System+for+Your+Cycle" alt="Sync one box system" class="rounded-lg shadow-xl">
                 </div>
                 <div class="md:w-1/2">
-                    <span class="text-coral-500 font-semibold">OUR SOLUTION</span>
+                    <span class="text-coral-600 font-semibold">HOW IT WORKS</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Targeted Nutrition, Timed Perfectly.</h2>
                     <p class="mt-4 text-lg text-gray-600">Sync is a complete cycle-syncing system. Your monthly pack includes one convenient box with a 28-day supply, containing four distinct, science-backed formulas precisely portioned to support you through each phase of your cycle.</p>
                     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="flex items-center">
-                            <i data-lucide="droplets" class="h-6 w-6 text-coral-500 mr-3 flex-shrink-0"></i>
+                        <div class="flex items-center p-4 bg-white rounded-lg">
+                            <i data-lucide="droplets" class="h-6 w-6 text-coral-600 mr-3 flex-shrink-0"></i>
                             <div>
                                 <h3 class="text-lg font-semibold">FlowEase+</h3>
                                 <p class="text-gray-600 text-sm">For your Menstrual phase.</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="flower-2" class="h-6 w-6 text-coral-500 mr-3 flex-shrink-0"></i>
+                        <div class="flex items-center p-4 bg-white rounded-lg">
+                            <i data-lucide="flower-2" class="h-6 w-6 text-coral-600 mr-3 flex-shrink-0"></i>
                             <div>
                                 <h3 class="text-lg font-semibold">OvaPrime</h3>
                                 <p class="text-gray-600 text-sm">For your Follicular phase.</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="sun" class="h-6 w-6 text-coral-500 mr-3 flex-shrink-0"></i>
+                        <div class="flex items-center p-4 bg-white rounded-lg">
+                            <i data-lucide="sun" class="h-6 w-6 text-coral-600 mr-3 flex-shrink-0"></i>
                             <div>
                                 <h3 class="text-lg font-semibold">ClearPhase</h3>
                                 <p class="text-gray-600 text-sm">For your Ovulatory phase.</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="moon" class="h-6 w-6 text-coral-500 mr-3 flex-shrink-0"></i>
+                        <div class="flex items-center p-4 bg-white rounded-lg">
+                            <i data-lucide="moon" class="h-6 w-6 text-coral-600 mr-3 flex-shrink-0"></i>
                             <div>
                                 <h3 class="text-lg font-semibold">SereneCalm</h3>
                                 <p class="text-gray-600 text-sm">For your Luteal phase.</p>
@@ -149,114 +163,89 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">The Science Behind Sync</h2>
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Each formula is packed with clinically-researched, highly bioavailable ingredients at effective doses. No compromises.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Menstrual Card -->
-                    <div class="bg-rose-100 p-6 rounded-2xl shadow-md border border-rose-200 card-hover flex flex-col">
-                        <h3 class="text-xl font-bold text-rose-800">FlowEase+ (Menstrual)</h3>
-                        <p class="text-sm font-semibold text-rose-600 mb-4">Goal: Soothe & Replenish</p>
-                        <ul class="space-y-2 text-rose-700 flex-grow">
-                            <li class="flex items-center"><i data-lucide="gem" class="h-4 w-4 mr-2 flex-shrink-0"></i>Liposomal Iron & Vit C</li>
-                            <li class="flex items-center"><i data-lucide="leaf" class="h-4 w-4 mr-2 flex-shrink-0"></i>Magnesium Glycinate</li>
-                            <li class="flex items-center"><i data-lucide="shield" class="h-4 w-4 mr-2 flex-shrink-0"></i>PEA (Levagen®+)</li>
-                            <li class="flex items-center"><i data-lucide="sprout" class="h-4 w-4 mr-2 flex-shrink-0"></i>Curcumin Phytosome</li>
-                            <li class="flex items-center"><i data-lucide="flame" class="h-4 w-4 mr-2 flex-shrink-0"></i>Ginger & Boswellia</li>
-                        </ul>
-                    </div>
-                    <!-- Follicular Card -->
-                    <div class="bg-amber-100 p-6 rounded-2xl shadow-md border border-amber-200 card-hover flex flex-col">
-                        <h3 class="text-xl font-bold text-amber-800">OvaPrime (Follicular)</h3>
-                        <p class="text-sm font-semibold text-amber-600 mb-4">Goal: Prepare & Energize</p>
-                        <ul class="space-y-2 text-amber-700 flex-grow">
-                            <li class="flex items-center"><i data-lucide="milestone" class="h-4 w-4 mr-2 flex-shrink-0"></i>Myo & D-Chiro Inositol</li>
-                            <li class="flex items-center"><i data-lucide="activity" class="h-4 w-4 mr-2 flex-shrink-0"></i>Active B-Complex</li>
-                            <li class="flex items-center"><i data-lucide="zap" class="h-4 w-4 mr-2 flex-shrink-0"></i>Zinc Picolinate</li>
-                            <li class="flex items-center"><i data-lucide="shield-check" class="h-4 w-4 mr-2 flex-shrink-0"></i>N-Acetylcysteine (NAC)</li>
-                            <li class="flex items-center"><i data-lucide="grape" class="h-4 w-4 mr-2 flex-shrink-0"></i>Trans-Resveratrol</li>
-                        </ul>
-                    </div>
-                    <!-- Ovulatory Card -->
-                    <div class="bg-teal-100 p-6 rounded-2xl shadow-md border border-teal-200 card-hover flex flex-col">
-                        <h3 class="text-xl font-bold text-teal-800">ClearPhase (Ovulatory)</h3>
-                        <p class="text-sm font-semibold text-teal-600 mb-4">Goal: Detox & Protect</p>
-                         <ul class="space-y-2 text-teal-700 flex-grow">
-                            <li class="flex items-center"><i data-lucide="leafy-green" class="h-4 w-4 mr-2 flex-shrink-0"></i>DIM & Sulforaphane</li>
-                            <li class="flex items-center"><i data-lucide="recycle" class="h-4 w-4 mr-2 flex-shrink-0"></i>Calcium-D-Glucarate</li>
-                             <li class="flex items-center"><i data-lucide="shield-check" class="h-4 w-4 mr-2 flex-shrink-0"></i>N-Acetylcysteine (NAC)</li>
-                            <li class="flex items-center"><i data-lucide="fish" class="h-4 w-4 mr-2 flex-shrink-0"></i>Algal DHA/EPA</li>
-                            <li class="flex items-center"><i data-lucide="anchor" class="h-4 w-4 mr-2 flex-shrink-0"></i>Taurine & Choline</li>
-                        </ul>
-                    </div>
-                    <!-- Luteal Card -->
-                    <div class="bg-indigo-100 p-6 rounded-2xl shadow-md border border-indigo-200 card-hover flex flex-col">
-                        <h3 class="text-xl font-bold text-indigo-800">SereneCalm (Luteal)</h3>
-                        <p class="text-sm font-semibold text-indigo-600 mb-4">Goal: Balance & Restore</p>
-                        <ul class="space-y-2 text-indigo-700 flex-grow">
-                            <li class="flex items-center"><i data-lucide="flower-2" class="h-4 w-4 mr-2 flex-shrink-0"></i>Saffron (Affron®)</li>
-                            <li class="flex items-center"><i data-lucide="brain-circuit" class="h-4 w-4 mr-2 flex-shrink-0"></i>Magtein® (Mg)</li>
-                            <li class="flex items-center"><i data-lucide="clover" class="h-4 w-4 mr-2 flex-shrink-0"></i>Chasteberry & B6</li>
-                            <li class="flex items-center"><i data-lucide="coffee" class="h-4 w-4 mr-2 flex-shrink-0"></i>L-Theanine</li>
-                            <li class="flex items-center"><i data-lucide="cloud-moon" class="h-4 w-4 mr-2 flex-shrink-0"></i>GABA</li>
-                        </ul>
-                    </div>
+                
+                <!-- Tabs -->
+                <div class="mb-8 border-b border-gray-200">
+                    <nav class="flex -mb-px justify-center space-x-4 md:space-x-8" aria-label="Tabs">
+                        <button class="tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent hover:border-gray-300" data-tab="menstrual">Menstrual</button>
+                        <button class="tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent hover:border-gray-300" data-tab="follicular">Follicular</button>
+                        <button class="tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent hover:border-gray-300" data-tab="ovulatory">Ovulatory</button>
+                        <button class="tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent hover:border-gray-300" data-tab="luteal">Luteal</button>
+                    </nav>
                 </div>
-            </div>
-        </section>
 
-        <!-- Target Audience Section -->
-        <section class="bg-gray-50 py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Designed For Every Woman</h2>
-                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Whether you're a fitness enthusiast, a busy professional, or simply health-conscious, Sync is made for you.</p>
-                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div class="bg-white border-2 border-coral-200 text-coral-500 rounded-full h-24 w-24 flex items-center justify-center mx-auto transition-all duration-300 transform hover:scale-110 hover:bg-coral-500 hover:text-white">
-                            <i data-lucide="heart-pulse" class="h-12 w-12"></i>
+                <!-- Tab Content -->
+                <div class="max-w-4xl mx-auto">
+                    <div id="menstrual" class="tab-content">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-rose-800">FlowEase+</h3>
+                            <p class="text-rose-600 mt-1 mb-6">Goal: Soothe discomfort and replenish lost nutrients.</p>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start"><i data-lucide="gem" class="h-5 w-5 mr-3 mt-1 text-rose-500 flex-shrink-0"></i><div><span class="font-semibold">Liposomal Iron & Vit C:</span> Gentle on the stomach, this pair restores iron levels lost during bleeding.</div></li>
+                                <li class="flex items-start"><i data-lucide="leaf" class="h-5 w-5 mr-3 mt-1 text-rose-500 flex-shrink-0"></i><div><span class="font-semibold">Magnesium Glycinate:</span> Eases cramps and supports a calm mood.</div></li>
+                                <li class="flex items-start"><i data-lucide="shield" class="h-5 w-5 mr-3 mt-1 text-rose-500 flex-shrink-0"></i><div><span class="font-semibold">PEA (Levagen®+):</span> A powerful, clinically-studied ingredient for pain relief.</div></li>
+                                <li class="flex items-start"><i data-lucide="flame" class="h-5 w-5 mr-3 mt-1 text-rose-500 flex-shrink-0"></i><div><span class="font-semibold">Ginger, Boswellia & Curcumin:</span> A potent anti-inflammatory trio to target cramps at their source.</div></li>
+                            </ul>
                         </div>
-                        <h3 class="mt-4 text-xl font-semibold">Fitness Enthusiasts</h3>
                     </div>
-                    <div class="text-center">
-                        <div class="bg-white border-2 border-coral-200 text-coral-500 rounded-full h-24 w-24 flex items-center justify-center mx-auto transition-all duration-300 transform hover:scale-110 hover:bg-coral-500 hover:text-white">
-                            <i data-lucide="briefcase" class="h-12 w-12"></i>
+                    <div id="follicular" class="tab-content hidden">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-amber-800">OvaPrime</h3>
+                            <p class="text-amber-600 mt-1 mb-6">Goal: Support follicle maturation and promote stable energy.</p>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start"><i data-lucide="milestone" class="h-5 w-5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><span class="font-semibold">Myo & D-Chiro Inositol:</span> The gold-standard 40:1 ratio to support insulin sensitivity and ovulatory regularity.</div></li>
+                                <li class="flex items-start"><i data-lucide="activity" class="h-5 w-5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><span class="font-semibold">Active B-Complex:</span> Bioavailable forms essential for energy production and hormone metabolism.</div></li>
+                                <li class="flex items-start"><i data-lucide="shield-check" class="h-5 w-5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><span class="font-semibold">NAC & Trans-Resveratrol:</span> Powerful antioxidants that protect developing eggs from oxidative stress.</div></li>
+                            </ul>
                         </div>
-                        <h3 class="mt-4 text-xl font-semibold">Busy Professionals</h3>
                     </div>
-                    <div class="text-center">
-                        <div class="bg-white border-2 border-coral-200 text-coral-500 rounded-full h-24 w-24 flex items-center justify-center mx-auto transition-all duration-300 transform hover:scale-110 hover:bg-coral-500 hover:text-white">
-                            <i data-lucide="sparkles" class="h-12 w-12"></i>
+                    <div id="ovulatory" class="tab-content hidden">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-teal-800">ClearPhase</h3>
+                            <p class="text-teal-600 mt-1 mb-6">Goal: Support estrogen metabolism and protect the released egg.</p>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start"><i data-lucide="leafy-green" class="h-5 w-5 mr-3 mt-1 text-teal-500 flex-shrink-0"></i><div><span class="font-semibold">DIM & Sulforaphane:</span> A premier combination to support liver detoxification of estrogen.</div></li>
+                                <li class="flex items-start"><i data-lucide="recycle" class="h-5 w-5 mr-3 mt-1 text-teal-500 flex-shrink-0"></i><div><span class="font-semibold">Calcium-D-Glucarate:</span> Binds to metabolized hormones to ensure they are cleared from the body.</div></li>
+                                <li class="flex items-start"><i data-lucide="fish" class="h-5 w-5 mr-3 mt-1 text-teal-500 flex-shrink-0"></i><div><span class="font-semibold">Algal DHA/EPA & Choline:</span> Supports hormone signaling and liver function.</div></li>
+                            </ul>
                         </div>
-                        <h3 class="mt-4 text-xl font-semibold">Health Conscious</h3>
                     </div>
-                    <div class="text-center">
-                        <div class="bg-white border-2 border-coral-200 text-coral-500 rounded-full h-24 w-24 flex items-center justify-center mx-auto transition-all duration-300 transform hover:scale-110 hover:bg-coral-500 hover:text-white">
-                            <i data-lucide="rocket" class="h-12 w-12"></i>
+                    <div id="luteal" class="tab-content hidden">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-indigo-800">SereneCalm</h3>
+                            <p class="text-indigo-600 mt-1 mb-6">Goal: Reduce PMS, manage cravings, and support restorative sleep.</p>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start"><i data-lucide="flower-2" class="h-5 w-5 mr-3 mt-1 text-indigo-500 flex-shrink-0"></i><div><span class="font-semibold">Saffron (Affron®):</span> Clinically shown to improve mood and reduce PMS cravings.</div></li>
+                                <li class="flex items-start"><i data-lucide="brain-circuit" class="h-5 w-5 mr-3 mt-1 text-indigo-500 flex-shrink-0"></i><div><span class="font-semibold">Magtein® (Magnesium):</span> A unique form that crosses the blood-brain barrier for enhanced calming effects.</div></li>
+                                <li class="flex items-start"><i data-lucide="clover" class="h-5 w-5 mr-3 mt-1 text-indigo-500 flex-shrink-0"></i><div><span class="font-semibold">Chasteberry & B6:</span> A classic duo to support progesterone levels and reduce PMS symptoms.</div></li>
+                                <li class="flex items-start"><i data-lucide="cloud-moon" class="h-5 w-5 mr-3 mt-1 text-indigo-500 flex-shrink-0"></i><div><span class="font-semibold">L-Theanine & GABA:</span> Work together to promote relaxation and reduce anxiety without drowsiness.</div></li>
+                            </ul>
                         </div>
-                        <h3 class="mt-4 text-xl font-semibold">Women On-the-Go</h3>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Purchase Section -->
-        <section id="purchase" class="py-20">
+        <section id="purchase" class="py-20 bg-coral-50">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get in Sync Today.</h2>
-                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Start feeling your best all month long. Choose the plan that's right for you.</p>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Start feeling your best all month long. Your 28-day supply of all four formulas in one convenient box.</p>
                 <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-8">
-                    <div class="border-2 border-gray-200 rounded-lg p-8 md:w-1/3 flex flex-col card-hover">
+                    <div class="bg-white border-2 border-gray-200 rounded-lg p-8 md:w-1/3 flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                         <h3 class="text-2xl font-bold">One-Time Purchase</h3>
                         <p class="text-gray-600 mt-2 flex-grow">A 28-day supply to try it out.</p>
                         <p class="text-4xl font-bold my-6">$39.99</p>
                         <a href="#" class="w-full bg-gray-700 text-white font-semibold py-3 rounded-full hover:bg-gray-900 transition-colors">Buy Now</a>
                     </div>
-                    <div class="border-2 border-coral-500 bg-white rounded-lg p-8 md:w-1/3 relative flex flex-col shadow-2xl transform scale-105">
-                        <span class="absolute top-0 -translate-y-1/2 bg-coral-500 text-white px-4 py-1 rounded-full font-semibold">Most Popular</span>
+                    <div class="bg-white border-2 border-coral-600 rounded-lg p-8 md:w-1/3 relative flex flex-col shadow-2xl transform scale-105">
+                        <span class="absolute top-0 -translate-y-1/2 bg-coral-600 text-white px-4 py-1 rounded-full font-semibold">Most Popular</span>
                         <h3 class="text-2xl font-bold">Monthly Subscription</h3>
                         <p class="text-gray-600 mt-2 flex-grow">Your 28-day supply delivered monthly.</p>
                         <p class="text-4xl font-bold my-6">$34.99 <span class="text-lg font-normal">/month</span></p>
-                        <a href="#" class="w-full bg-coral-500 text-white font-semibold py-3 rounded-full hover:bg-coral-600 transition-colors transform hover:scale-105">Subscribe & Save</a>
+                        <a href="#" class="w-full bg-coral-600 text-white font-semibold py-3 rounded-full hover:bg-coral-700 transition-colors transform hover:scale-105">Subscribe & Save</a>
                     </div>
                 </div>
-                 <p class="mt-8 text-gray-500">Also available on Amazon. Coming soon to Target, Walmart, and other health stores!</p>
             </div>
         </section>
 
@@ -267,14 +256,13 @@
         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold text-coral-500">Sync</h3>
+                    <h3 class="text-xl font-bold text-coral-600">Sync</h3>
                     <p class="mt-2 text-gray-400">Nutrition in Sync with your Cycle.</p>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg">Quick Links</h4>
                     <ul class="mt-4 space-y-2">
-                        <li><a href="#problem" class="text-gray-400 hover:text-white">The Problem</a></li>
-                        <li><a href="#solution" class="text-gray-400 hover:text-white">Our Solution</a></li>
+                        <li><a href="#solution" class="text-gray-400 hover:text-white">How It Works</a></li>
                         <li><a href="#phases" class="text-gray-400 hover:text-white">The Science</a></li>
                         <li><a href="#purchase" class="text-gray-400 hover:text-white">Shop</a></li>
                     </ul>
@@ -291,8 +279,8 @@
                     <h4 class="font-semibold text-lg">Newsletter</h4>
                     <p class="mt-2 text-gray-400">Get updates and special offers.</p>
                     <form class="mt-4 flex">
-                        <input type="email" placeholder="Your email" class="w-full rounded-l-md px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-coral-500">
-                        <button class="bg-coral-500 px-4 rounded-r-md hover:bg-coral-600 transition-colors">
+                        <input type="email" placeholder="Your email" class="w-full rounded-l-md px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-coral-600">
+                        <button class="bg-coral-600 px-4 rounded-r-md hover:bg-coral-700 transition-colors">
                             <i data-lucide="send" class="h-5 w-5"></i>
                         </button>
                     </form>
@@ -313,6 +301,29 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Tabs functionality
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.getAttribute('data-tab');
+
+                // Deactivate all tabs and hide all content
+                tabs.forEach(t => t.classList.remove('tab-active'));
+                tabContents.forEach(c => c.classList.add('hidden'));
+
+                // Activate the clicked tab and show its content
+                tab.classList.add('tab-active');
+                document.getElementById(target).classList.remove('hidden');
+            });
+        });
+
+        // Set the first tab as active by default
+        document.querySelector('.tab[data-tab="menstrual"]').classList.add('tab-active');
+        document.getElementById('menstrual').classList.remove('hidden');
+
     </script>
 
 </body>
